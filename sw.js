@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gramvyapar-shell-v6';
+const CACHE_NAME = 'gramvyapar-shell-v7';
 const APP_SHELL = [
   './',
   './index.html',
@@ -24,8 +24,12 @@ const APP_SHELL = [
   './reference-assets/artisan-pottery.jpg',
   './reference-assets/artisan-crochet.jpg',
   './reference-assets/artisan-knitting.jpg',
+  './reference-assets/artisan-weaving.jpg',
+  './reference-assets/artisan-embroidery.jpg',
   './reference-assets/artisan-bamboo.jpg',
+  './reference-assets/artisan-bell-metal.jpg',
   './reference-assets/artisan-tailoring.jpg',
+  './reference-assets/artisan-dairy.jpg',
   './reference-assets/artisan-beauty.jpg',
   './reference-assets/artisan-food-processing.jpg',
   './reference-assets/shop-blue-pottery.jpg',

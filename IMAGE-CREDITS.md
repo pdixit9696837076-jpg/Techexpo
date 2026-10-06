@@ -3,6 +3,15 @@
 The seven craft lesson photographs in `reference-assets/artisan-*.jpg` are
 cropped from images provided by the project owner for use in GramVyapar.
 
+The additional topic-specific lesson photos are from Wikimedia Commons:
+
+| Lesson | Image | Creator | License and source |
+| --- | --- | --- | --- |
+| Weaving & handloom | `reference-assets/artisan-weaving.jpg` | Papori Bora | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:These_Mising_tribe_women_are_involved_in_the_traditional_craft_of_handloom_weaving.jpg) |
+| Embroidery & Aari work | `reference-assets/artisan-embroidery.jpg` | Kritzolina | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Embroidery_on_a_cashmere_shawl_02.jpg) |
+| Bell metal & lacquerware | `reference-assets/artisan-bell-metal.jpg` | Biswarup Ganguly | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dhokra_Art_-_Saturday_Haat_-_Sonajhuri_-_Birbhum_2014-06-28_5276.JPG) |
+| Dairy products | `reference-assets/artisan-dairy.jpg` | Rajani Gairshail | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Chhurpi_a_traditional_Himalayan_dried_dairy_product,1.jpg) |
+
 Marketplace photos are local resized thumbnails from Wikimedia Commons. They
 illustrate the sample listings and are not a guarantee that the pictured item
 is the exact item offered by a seller.
