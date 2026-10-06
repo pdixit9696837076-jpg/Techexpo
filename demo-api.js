@@ -10,7 +10,8 @@
     users: 'gramvyapar-demo-users',
     session: 'gramvyapar-demo-session',
     otp: 'gramvyapar-demo-otp',
-    chats: 'gramvyapar-demo-chats'
+    chats: 'gramvyapar-demo-chats',
+    profiles: 'gramvyapar-demo-profiles'
   };
   const originalFetch = window.fetch.bind(window);
 
@@ -124,6 +125,28 @@
     if (pathname === '/api/me' && method === 'GET') {
       const user = currentUser();
       return user ? jsonResponse({ user: { name: user.name, email: user.email, phone: user.phone } }) : jsonResponse({ error: 'Please log in to continue.' }, 401);
+    }
+
+    if (pathname === '/api/profile' && (method === 'GET' || method === 'PUT')) {
+      const user = currentUser();
+      if (!user) return jsonResponse({ error: 'Please log in to continue.' }, 401);
+      const profiles = read(keys.profiles, {});
+      if (method === 'GET') return jsonResponse({ profile: profiles[user.email] || null });
+
+      const crafts = ['pottery', 'crochet', 'knitting', 'weaving', 'embroidery', 'bamboo', 'bell-metal', 'tailoring', 'dairy', 'food-processing', 'beauty'];
+      const incomes = ['not-earning', 'under-5000', '5000-15000', '15000-30000', 'over-30000', 'prefer-not-to-say'];
+      const confidenceLevels = ['beginner', 'learning', 'confident'];
+      if (!crafts.includes(input.craft) || !incomes.includes(input.monthlyIncome) || !confidenceLevels.includes(input.businessConfidence)) {
+        return jsonResponse({ error: 'Choose a craft, an income range, and a business experience level.' }, 400);
+      }
+      const profile = {
+        craft: input.craft,
+        monthlyIncome: input.monthlyIncome,
+        businessConfidence: input.businessConfidence
+      };
+      profiles[user.email] = profile;
+      localStorage.setItem(keys.profiles, JSON.stringify(profiles));
+      return jsonResponse({ profile });
     }
 
     if (pathname === '/api/logout' && method === 'POST') {

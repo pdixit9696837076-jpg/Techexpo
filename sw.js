@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gramvyapar-shell-v4';
+const CACHE_NAME = 'gramvyapar-shell-v5';
 const APP_SHELL = [
   './',
   './index.html',
@@ -20,7 +20,18 @@ const APP_SHELL = [
   './pwa.js',
   './auth.js',
   './script.js',
-  './dashboard.js'
+  './dashboard.js',
+  './reference-assets/artisan-pottery.png',
+  './reference-assets/artisan-crochet.png',
+  './reference-assets/artisan-knitting.png',
+  './reference-assets/artisan-bamboo.png',
+  './reference-assets/artisan-tailoring.png',
+  './reference-assets/artisan-beauty.png',
+  './reference-assets/artisan-food-processing.png',
+  './reference-assets/shop-blue-pottery.jpg',
+  './reference-assets/shop-handwoven-stole.jpg',
+  './reference-assets/shop-terracotta-lamp.jpg',
+  './reference-assets/shop-bamboo-basket.jpg'
 ];
 
 self.addEventListener('install', (event) => {

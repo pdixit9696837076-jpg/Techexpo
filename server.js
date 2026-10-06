@@ -59,6 +59,13 @@ db.exec(`
     message TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
   );
+  CREATE TABLE IF NOT EXISTS artisan_profiles (
+    user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+    craft TEXT NOT NULL,
+    monthly_income TEXT NOT NULL,
+    business_confidence TEXT NOT NULL,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
 `);
 
 const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
@@ -134,7 +141,7 @@ async function api(request, response, pathname) {
     response.writeHead(204, {
       'Access-Control-Allow-Origin': origin,
       'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     });
     return response.end();
@@ -148,6 +155,42 @@ async function api(request, response, pathname) {
   if (pathname === '/api/me' && request.method === 'GET') {
     const user = sessionUser(request);
     return user ? json(request, response, 200, { user }) : json(request, response, 401, { error: 'Please log in to continue.' });
+  }
+  if (pathname === '/api/profile' && (request.method === 'GET' || request.method === 'PUT')) {
+    const user = sessionUser(request);
+    if (!user) return json(request, response, 401, { error: 'Please log in to continue.' });
+    if (request.method === 'GET') {
+      const profile = db.prepare(`
+        SELECT craft, monthly_income AS monthlyIncome, business_confidence AS businessConfidence
+        FROM artisan_profiles WHERE user_id = ?
+      `).get(user.id) || null;
+      return json(request, response, 200, { profile });
+    }
+
+    const input = await body(request);
+    const crafts = new Set(['pottery', 'crochet', 'knitting', 'weaving', 'embroidery', 'bamboo', 'bell-metal', 'tailoring', 'dairy', 'food-processing', 'beauty']);
+    const incomes = new Set(['not-earning', 'under-5000', '5000-15000', '15000-30000', 'over-30000', 'prefer-not-to-say']);
+    const confidenceLevels = new Set(['beginner', 'learning', 'confident']);
+    if (!crafts.has(input.craft) || !incomes.has(input.monthlyIncome) || !confidenceLevels.has(input.businessConfidence)) {
+      return json(request, response, 400, { error: 'Choose a craft, an income range, and a business experience level.' });
+    }
+
+    db.prepare(`
+      INSERT INTO artisan_profiles (user_id, craft, monthly_income, business_confidence)
+      VALUES (?, ?, ?, ?)
+      ON CONFLICT(user_id) DO UPDATE SET
+        craft = excluded.craft,
+        monthly_income = excluded.monthly_income,
+        business_confidence = excluded.business_confidence,
+        updated_at = CURRENT_TIMESTAMP
+    `).run(user.id, input.craft, input.monthlyIncome, input.businessConfidence);
+    return json(request, response, 200, {
+      profile: {
+        craft: input.craft,
+        monthlyIncome: input.monthlyIncome,
+        businessConfidence: input.businessConfidence
+      }
+    });
   }
   if (pathname === '/api/logout' && request.method === 'POST') {
     const cookie = request.headers.cookie || '';

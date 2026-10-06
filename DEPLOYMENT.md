@@ -4,13 +4,13 @@ GramVyapar includes a Node.js server for login, account creation, and the dashbo
 
 ## GitHub Pages presentation demo
 
-The GitHub Pages site includes a browser-only presentation demo. Visitors can create a demo account, log in, use a generated demo OTP, and open the dashboard. Demo accounts, cart items, and chat history stay in that browser only; OTP is displayed on the page, and AI chat is replaced with a sample response. The site displays a notice explaining these limitations. Do not use real passwords or sensitive personal information in this demo.
+The GitHub Pages site includes a browser-only presentation demo. Visitors can create a demo account, log in, use a generated demo OTP, and open the dashboard. Demo accounts, artisan profile answers, cart items, and chat history stay in that browser only; OTP is displayed on the page, and AI chat is replaced with a sample response. Do not use real passwords or sensitive personal information in this demo.
 
 To test the Pages demo locally while running the Node server, open `http://localhost:3000/login.html?pages-demo=1`. The demo switch lasts for that browser tab; ordinary local use without the query parameter continues to use the real API.
 
 ## Install on Android
 
-Open the live GitHub Pages site in Chrome on Android, then tap **Add to home screen** (or **Install app**) in the browser menu. The site can open as a standalone app and its main screens are cached for offline viewing after the first visit. Account/API demo features still work only in that browser and are not a real backend.
+Open the live GitHub Pages site in Chrome on Android, then tap **Add to home screen** (or **Install app**) in the browser menu. The site can open as a standalone app and its main screens and craft photos are cached for offline viewing after the first visit. Account/API demo features still work only in that browser and are not a real backend.
 
 ## Create the live site
 

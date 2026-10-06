@@ -637,3 +637,160 @@
     margin-top: 24px;
   }
 }
+
+.product-art {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artisan-setup {
+  width: min(520px, calc(100vw - 32px));
+  max-width: none;
+  max-height: min(90vh, 680px);
+  overflow-y: auto;
+  padding: 26px;
+  border: 1px solid #e8e9ec;
+  border-radius: 12px;
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 0 20px 60px #17203930;
+}
+
+.artisan-setup::backdrop {
+  background: #17203980;
+  backdrop-filter: blur(2px);
+}
+
+.artisan-setup > .eyebrow {
+  margin: 0 0 9px;
+  color: #a67825;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.artisan-setup h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 24px;
+}
+
+.artisan-setup-intro {
+  margin: 9px 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#artisan-setup-form {
+  display: grid;
+  gap: 14px;
+}
+
+#artisan-setup-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--navy);
+  font: 600 11px var(--sans);
+}
+
+#artisan-setup-form select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #dfe2e5;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: 12px var(--sans);
+}
+
+#artisan-setup-form select:focus {
+  outline: 2px solid #d2ad5a;
+  outline-offset: 1px;
+}
+
+.artisan-setup-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.artisan-setup-actions button {
+  flex: 1;
+  min-height: 40px;
+  font-size: 12px;
+}
+
+.artisan-setup-cancel {
+  border: 1px solid #d9dde2;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--navy);
+  font: 600 12px var(--sans);
+  cursor: pointer;
+}
+
+.artisan-setup-cancel[hidden] {
+  display: none;
+}
+
+#artisan-setup-submit {
+  min-height: 40px;
+  font-size: 12px;
+}
+
+.artisan-setup-error {
+  min-height: 16px;
+  margin: 0;
+  color: #a22f26;
+  font-size: 11px;
+}
+
+.artisan-profile-card h2 {
+  overflow-wrap: anywhere;
+}
+
+.artisan-profile-card {
+  padding: 21px;
+  border-color: #f0e6ce;
+  background: #fffaf0;
+}
+
+.artisan-profile-card .eyebrow {
+  font-size: 8px;
+}
+
+.artisan-profile-card h2 {
+  max-width: 230px;
+  margin: 0;
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.artisan-profile-card > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.artisan-profile-card .inline-link {
+  margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+  .artisan-setup {
+    padding: 20px;
+  }
+
+  .artisan-setup h2 {
+    font-size: 21px;
+  }
+}
