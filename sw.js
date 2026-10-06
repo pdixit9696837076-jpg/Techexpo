@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gramvyapar-shell-v3';
+const CACHE_NAME = 'gramvyapar-shell-v4';
 const APP_SHELL = [
   './',
   './index.html',
@@ -57,6 +57,24 @@ self.addEventListener('fetch', (event) => {
         if (cachedPage) return cachedPage;
         const offlineHome = await caches.match('./index.html');
         if (offlineHome) return offlineHome;
+        throw error;
+      }
+    })());
+    return;
+  }
+
+  if (/\.(?:js|css|webmanifest)$/.test(url.pathname)) {
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(request);
+        if (response.ok) {
+          const cache = await caches.open(CACHE_NAME);
+          await cache.put(request, response.clone());
+        }
+        return response;
+      } catch (error) {
+        const cached = await caches.match(request, { ignoreSearch: true });
+        if (cached) return cached;
         throw error;
       }
     })());
