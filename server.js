@@ -97,7 +97,7 @@ const json = (request, response, status, payload, headers = {}) => {
   response.end(JSON.stringify(payload));
 };
 
-const sessionCookie = (token, maxAge) => `gramvyapar_session=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${maxAge}`;
+const sessionCookie = (token, maxAge) => `gramvyapar_session=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${maxAge}${process.env.NODE_ENV === 'production' ? '; Secure' : ''}`;
 
 const createSession = (response, userId) => {
   const token = crypto.randomBytes(32).toString('hex');
@@ -315,6 +315,10 @@ const defaultPort = Number(process.env.PORT) || 3000;
 const startServer = (port) => {
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, `http://localhost:${port}`).pathname;
+    if (pathname === '/health' && request.method === 'GET') {
+      response.writeHead(200, { 'Content-Type': 'text/plain' });
+      return response.end('ok');
+    }
     if (pathname.startsWith('/api/')) return api(request, response, pathname);
     const requested = pathname === '/' ? '/index.html' : decodeURIComponent(pathname);
     const file = path.join(root, requested);

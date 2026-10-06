@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "GramVyapar landing page and authentication demo",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "scripts": {
     "start": "node server.js"
   },
