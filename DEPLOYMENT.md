@@ -1,6 +1,12 @@
 # Deploy GramVyapar on Render
 
-GramVyapar includes a Node.js server for login, account creation, and the dashboard API. GitHub Pages only serves static files, so it cannot run these features by itself.
+GramVyapar includes a Node.js server for login, account creation, and the dashboard API. GitHub Pages only serves static files, so it cannot run the real backend.
+
+## GitHub Pages presentation demo
+
+The GitHub Pages site includes a browser-only presentation demo. Visitors can create a demo account, log in, use a generated demo OTP, and open the dashboard. Demo accounts, cart items, and chat history stay in that browser only; OTP is displayed on the page, and AI chat is replaced with a sample response. The site displays a notice explaining these limitations. Do not use real passwords or sensitive personal information in this demo.
+
+To test the Pages demo locally while running the Node server, open `http://localhost:3000/login.html?pages-demo=1`. The demo switch lasts for that browser tab; ordinary local use without the query parameter continues to use the real API.
 
 ## Create the live site
 

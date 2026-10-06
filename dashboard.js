@@ -166,9 +166,11 @@ async function loadAiStatus() {
     const response = await fetch('/api/chat/status');
     if (!response.ok) throw new Error('Could not check AI setup.');
     const data = await response.json();
-    status.textContent = data.configured
-      ? (language === 'hi' ? 'API key जुड़ी है' : 'API key connected')
-      : (language === 'hi' ? '.env में API key डालें' : 'Add API key to .env');
+    status.textContent = data.demoMode
+      ? (language === 'hi' ? 'डेमो: AI चैट बंद है' : 'Demo: AI chat is off')
+      : data.configured
+        ? (language === 'hi' ? 'API key जुड़ी है' : 'API key connected')
+        : (language === 'hi' ? '.env में API key डालें' : 'Add API key to .env');
     status.classList.toggle('ready', data.configured);
     status.classList.toggle('needs-key', !data.configured);
   } catch {
