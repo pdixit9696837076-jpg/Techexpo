@@ -32,7 +32,9 @@ const isGramVyaparPort = serverPort >= 3000 && serverPort <= 3010;
 const API_BASE = location.protocol === 'file:' || (localHost && !isGramVyaparPort)
   ? 'http://localhost:3000'
   : '';
-const dashboardUrl = new URL('/dashboard.html', API_BASE || location.origin);
+const dashboardUrl = location.hostname.endsWith('.github.io')
+  ? new URL('./dashboard.html', location.href)
+  : new URL('/dashboard.html', API_BASE || location.origin);
 
 async function postJson(url, payload) {
   let response;
