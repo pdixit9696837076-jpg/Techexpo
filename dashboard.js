@@ -212,7 +212,7 @@ menuToggle.addEventListener('click', () => {
 window.addEventListener('resize', updateSidebarToggle);
 document.querySelector('#logout').addEventListener('click', async () => {
   await fetch('/api/logout', { method: 'POST' });
-  location.replace('login.html');
+  location.replace(location.hostname.endsWith('.github.io') ? 'login.html?pages-demo=1' : 'login.html');
 });
 document.querySelector('#price-form').addEventListener('submit', (event) => {
   event.preventDefault();

@@ -32,8 +32,9 @@ const isGramVyaparPort = serverPort >= 3000 && serverPort <= 3010;
 const API_BASE = location.protocol === 'file:' || (localHost && !isGramVyaparPort)
   ? 'http://localhost:3000'
   : '';
-const dashboardUrl = location.hostname.endsWith('.github.io')
-  ? new URL('./dashboard.html', location.href)
+const isGitHubPages = location.hostname.endsWith('.github.io');
+const dashboardUrl = isGitHubPages
+  ? new URL('./dashboard.html?pages-demo=1', location.href)
   : new URL('/dashboard.html', API_BASE || location.origin);
 
 async function postJson(url, payload) {
@@ -132,7 +133,7 @@ document.querySelector('#signup-form')?.addEventListener('submit', async (event)
       password: document.querySelector('#signup-password').value
     });
     showMessage('Account created! Redirecting to login…');
-    setTimeout(() => { location.href = 'login.html'; }, 900);
+    setTimeout(() => { location.href = isGitHubPages ? 'login.html?pages-demo=1' : 'login.html'; }, 900);
   } catch (error) {
     showMessage(error.message, true);
   }

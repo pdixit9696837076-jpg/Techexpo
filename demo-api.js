@@ -25,6 +25,13 @@
   updateBanner();
   document.body.prepend(banner);
   document.addEventListener('gramvyapar:language', (event) => updateBanner(event.detail.language));
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const target = new URL(link.href, location.href);
+    if (target.origin === location.origin && target.pathname.endsWith('.html')) {
+      target.searchParams.set('pages-demo', '1');
+      link.href = target.href;
+    }
+  });
   const style = document.createElement('style');
   style.textContent = '.demo-banner{position:sticky;top:0;z-index:10000;padding:9px 16px;background:#fff2cc;color:#563b00;text-align:center;font:600 13px/1.4 system-ui,sans-serif;border-bottom:1px solid #e8c968}';
   document.head.append(style);
