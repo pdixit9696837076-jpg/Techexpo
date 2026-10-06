@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log In — GramVyapar</title>
+  <link rel="stylesheet" href="reference-style.css">
+  <link rel="stylesheet" href="hover.css">
+  <link rel="stylesheet" href="auth-feedback.css">
+</head>
+<body class="auth-page">
+  <header class="topbar">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">ग्रा</span>
+      <span><b>GramVyapar</b><small data-en="RURAL SKILL ECOSYSTEM" data-hi="ग्रामीण कौशल मंच">RURAL SKILL ECOSYSTEM</small></span>
+    </a>
+    <div class="nav-actions">
+      <button class="language-toggle" data-language-toggle>हिंदी</button>
+      <a class="back-link" href="index.html" data-en="← Back to home" data-hi="← होम पर जाएँ">← Back to home</a>
+    </div>
+  </header>
+  <main class="auth-card">
+    <div class="auth-icon">ग्रा</div>
+    <h1 data-en="Welcome back" data-hi="वापस स्वागत है">Welcome back</h1>
+    <p class="auth-subtitle" data-en="Log in to continue your artisan journey" data-hi="कारीगर के रूप में अपना सफर जारी रखने के लिए लॉग इन करें">Log in to continue your artisan journey</p>
+    <p class="message" id="message" role="alert" aria-live="assertive" aria-atomic="true" tabindex="-1" hidden></p>
+    <div class="auth-switch">
+      <button class="active" data-mode="email" data-en="Email & password" data-hi="ईमेल और पासवर्ड">Email & password</button>
+      <button data-mode="mobile" data-en="Mobile & OTP" data-hi="मोबाइल और OTP">Mobile & OTP</button>
+    </div>
+    <form id="email-login">
+      <label data-en-label="Email address" data-hi-label="ईमेल पता">Email address<input id="email" type="email" placeholder="name@example.com" data-en-placeholder="name@example.com" data-hi-placeholder="नाम@उदाहरण.com" required></label>
+      <label data-en-label="Password" data-hi-label="पासवर्ड">Password<div class="input-wrap"><input id="password" type="password" placeholder="Enter your password" data-en-placeholder="Enter your password" data-hi-placeholder="अपना पासवर्ड लिखें" required><button type="button" data-toggle="password" data-en="Show" data-hi="दिखाएँ">Show</button></div></label>
+      <div class="form-row">
+        <label class="check" data-en-label="Remember me" data-hi-label="मुझे याद रखें"><input type="checkbox"> Remember me</label>
+        <button type="button" class="text-button" id="forgot" data-en="Forgot password?" data-hi="पासवर्ड भूल गए?">Forgot password?</button>
+      </div>
+      <button class="full dark-button" type="submit" data-en-html="Log In <b>→</b>" data-hi-html="लॉग इन करें <b>→</b>">Log In <b>→</b></button>
+    </form>
+    <form id="mobile-login" hidden>
+      <label data-en-label="Mobile number" data-hi-label="मोबाइल नंबर">Mobile number<input id="phone" type="tel" inputmode="numeric" placeholder="98765 43210" data-en-placeholder="98765 43210" data-hi-placeholder="98765 43210" maxlength="10"></label>
+      <button class="full dark-button" id="send-otp" type="button" data-en-html="Send OTP <b>→</b>" data-hi-html="OTP भेजें <b>→</b>">Send OTP <b>→</b></button>
+      <div id="otp-area" hidden>
+        <label data-en-label="One-time password" data-hi-label="एक बार का पासवर्ड">One-time password<input id="otp" type="text" inputmode="numeric" maxlength="6" placeholder="Enter OTP" data-en-placeholder="Enter OTP" data-hi-placeholder="OTP दर्ज करें"></label>
+        <p class="demo-note" id="demo-note"></p>
+        <button class="full dark-button" id="verify-otp" type="button" data-en-html="Verify & Log In <b>→</b>" data-hi-html="सत्यापित करें और लॉग इन करें <b>→</b>">Verify & Log In <b>→</b></button>
+      </div>
+    </form>
+    <p class="auth-footer"><span data-en="Don't have an account?" data-hi="खाता नहीं है?">Don't have an account?</span> <a href="signup.html" data-en="Create your account" data-hi="अपना खाता बनाएँ">Create your account</a></p>
+  </main>
+  <script src="language.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

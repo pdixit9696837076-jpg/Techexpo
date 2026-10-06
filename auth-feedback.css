@@ -1,0 +1,31 @@
+.auth-card .message {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  min-height: 0;
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.auth-card .message[hidden] {
+  display: none;
+}
+
+.auth-card .message.error {
+  color: #9f2118;
+  background: #fff0ee;
+  border: 1px solid #e9b6b1;
+}
+
+.auth-card .message.success {
+  color: #12663f;
+  background: #edf8f1;
+  border: 1px solid #b8dfc7;
+}
+
+.auth-card input[aria-invalid="true"] {
+  border-color: #c34135;
+  box-shadow: 0 0 0 2px #c3413520;
+}

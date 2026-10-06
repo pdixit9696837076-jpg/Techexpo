@@ -1,0 +1,5 @@
+.env
+gramvyapar.db
+gramvyapar.db-shm
+gramvyapar.db-wal
+node_modules/

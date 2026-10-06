@@ -1,0 +1,12 @@
+{
+  "name": "gramvyapar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GramVyapar landing page and authentication demo",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
+}
