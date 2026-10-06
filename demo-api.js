@@ -14,17 +14,6 @@
   };
   const originalFetch = window.fetch.bind(window);
 
-  const banner = document.createElement('aside');
-  banner.className = 'demo-banner';
-  banner.setAttribute('role', 'status');
-  const updateBanner = (language = localStorage.getItem('gramvyapar-language') || 'hi') => {
-    banner.textContent = language === 'hi'
-      ? 'प्रेज़ेंटेशन डेमो: खाते और चैट केवल इस ब्राउज़र में सेव होते हैं। असली OTP और AI उपलब्ध नहीं हैं।'
-      : 'Presentation demo: accounts and chats stay in this browser. Real OTP and AI are unavailable.';
-  };
-  updateBanner();
-  document.body.prepend(banner);
-  document.addEventListener('gramvyapar:language', (event) => updateBanner(event.detail.language));
   document.querySelectorAll('a[href]').forEach((link) => {
     const target = new URL(link.href, location.href);
     if (target.origin === location.origin && target.pathname.endsWith('.html')) {
@@ -35,10 +24,6 @@
   const pwaScript = document.createElement('script');
   pwaScript.src = new URL('pwa.js?v=gramvyapar-app-2', document.baseURI).href;
   document.head.append(pwaScript);
-  const style = document.createElement('style');
-  style.textContent = '.demo-banner{position:sticky;top:0;z-index:10000;padding:9px 16px;background:#fff2cc;color:#563b00;text-align:center;font:600 13px/1.4 system-ui,sans-serif;border-bottom:1px solid #e8c968}';
-  document.head.append(style);
-
   const jsonResponse = (payload, status = 200) => new Response(JSON.stringify(payload), {
     status,
     headers: { 'Content-Type': 'application/json' }
