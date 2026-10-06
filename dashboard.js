@@ -17,17 +17,17 @@ const isMobileLayout = () => window.matchMedia('(max-width: 760px)').matches;
 const cartStorageKey = 'gramvyapar-cart';
 const wishlistStorageKey = 'gramvyapar-wishlist';
 const artisanCrafts = [
-  { id: 'pottery', en: 'Pottery: clay work & terracotta', hi: 'मिट्टी के बर्तन: मिट्टी का काम और टेराकोटा', name: { en: 'Pottery', hi: 'मिट्टी का काम' }, photo: 'artisan-pottery.png', alt: { en: 'Artisan shaping a clay pot on a pottery wheel', hi: 'चाक पर मिट्टी का बर्तन बनाते कारीगर' } },
-  { id: 'crochet', en: 'Crochet: coasters, bags & home decor', hi: 'क्रोशे: कोस्टर, बैग और होम डेकोर', name: { en: 'Crochet', hi: 'क्रोशे' }, photo: 'artisan-crochet.png', alt: { en: 'Artisan making a colourful crochet craft', hi: 'रंगीन क्रोशे बनाते कारीगर' } },
-  { id: 'knitting', en: 'Knitting: sweaters, mufflers & socks', hi: 'निटिंग: स्वेटर, मफलर और मोज़े', name: { en: 'Knitting', hi: 'निटिंग' }, photo: 'artisan-knitting.png', alt: { en: 'Hands knitting a colourful woollen textile', hi: 'रंगीन ऊनी कपड़ा बुनते हाथ' } },
-  { id: 'weaving', en: 'Weaving & handloom: sarees, stoles & textiles', hi: 'बुनाई और हैंडलूम: साड़ी, स्टोल और कपड़ा', name: { en: 'Weaving', hi: 'बुनाई' }, photo: 'artisan-knitting.png', alt: { en: 'Handmade textile work with colourful yarn', hi: 'रंगीन धागों से हाथ से कपड़ा बनाते कारीगर' } },
-  { id: 'embroidery', en: 'Embroidery & Aari work', hi: 'एम्ब्रॉइडरी और आरी काम', name: { en: 'Embroidery', hi: 'कढ़ाई' }, photo: 'artisan-tailoring.png', alt: { en: 'Artisan sewing and decorating handmade clothing', hi: 'हाथ से कपड़ों पर कढ़ाई और सिलाई करते कारीगर' } },
-  { id: 'bamboo', en: 'Bamboo & cane craft', hi: 'बांस और केन क्राफ्ट', name: { en: 'Bamboo & cane craft', hi: 'बांस और केन क्राफ्ट' }, photo: 'artisan-bamboo.png', alt: { en: 'Artisan weaving bamboo and cane baskets', hi: 'बांस और केन की टोकरियाँ बनाते कारीगर' } },
-  { id: 'bell-metal', en: 'Bell metal & lacquerware', hi: 'बेल मेटल और लैकरवेयर', name: { en: 'Bell metal', hi: 'बेल मेटल' }, photo: 'artisan-pottery.png', alt: { en: 'Traditional artisan shaping a handmade craft', hi: 'पारंपरिक हस्तकला बनाते कारीगर' } },
-  { id: 'tailoring', en: 'Tailoring & stitching', hi: 'टेलरिंग और कढ़ाई/सीवन', name: { en: 'Tailoring', hi: 'टेलरिंग' }, photo: 'artisan-tailoring.png', alt: { en: 'Tailor stitching colourful fabric on a sewing machine', hi: 'सिलाई मशीन पर कपड़ा सिलते दर्ज़ी' } },
-  { id: 'dairy', en: 'Dairy value-added products', hi: 'डेयरी वैल्यू एडेड प्रोडक्ट', name: { en: 'Dairy products', hi: 'डेयरी उत्पाद' }, photo: 'artisan-food-processing.png', alt: { en: 'Artisans preparing food products together', hi: 'मिलकर खाद्य उत्पाद बनाते कारीगर' } },
-  { id: 'food-processing', en: 'Food processing: pickles, papad & snacks', hi: 'खाद्य प्रसंस्करण: आचार, पापड़ और नाश्ता', name: { en: 'Food processing', hi: 'खाद्य प्रसंस्करण' }, photo: 'artisan-food-processing.png', alt: { en: 'Artisans preparing fresh produce for food processing', hi: 'खाद्य प्रसंस्करण के लिए सब्ज़ियाँ तैयार करते कारीगर' } },
-  { id: 'beauty', en: 'Beauty & wellness services', hi: 'सौंदर्य और स्वस्थ्य सेवा', name: { en: 'Beauty & wellness', hi: 'सौंदर्य और वेलनेस' }, photo: 'artisan-beauty.png', alt: { en: 'Artisan providing a traditional beauty service', hi: 'पारंपरिक सौंदर्य सेवा देती कारीगर' } }
+  { id: 'pottery', en: 'Pottery: clay work & terracotta', hi: 'मिट्टी के बर्तन: मिट्टी का काम और टेराकोटा', name: { en: 'Pottery', hi: 'मिट्टी का काम' }, photo: 'artisan-pottery.jpg', alt: { en: 'Artisan shaping a clay pot on a pottery wheel', hi: 'चाक पर मिट्टी का बर्तन बनाते कारीगर' } },
+  { id: 'crochet', en: 'Crochet: coasters, bags & home decor', hi: 'क्रोशे: कोस्टर, बैग और होम डेकोर', name: { en: 'Crochet', hi: 'क्रोशे' }, photo: 'artisan-crochet.jpg', alt: { en: 'Artisan making a colourful crochet craft', hi: 'रंगीन क्रोशे बनाते कारीगर' } },
+  { id: 'knitting', en: 'Knitting: sweaters, mufflers & socks', hi: 'निटिंग: स्वेटर, मफलर और मोज़े', name: { en: 'Knitting', hi: 'निटिंग' }, photo: 'artisan-knitting.jpg', alt: { en: 'Hands knitting a colourful woollen textile', hi: 'रंगीन ऊनी कपड़ा बुनते हाथ' } },
+  { id: 'weaving', en: 'Weaving & handloom: sarees, stoles & textiles', hi: 'बुनाई और हैंडलूम: साड़ी, स्टोल और कपड़ा', name: { en: 'Weaving', hi: 'बुनाई' }, photo: 'artisan-knitting.jpg', alt: { en: 'Handmade textile work with colourful yarn', hi: 'रंगीन धागों से हाथ से कपड़ा बनाते कारीगर' } },
+  { id: 'embroidery', en: 'Embroidery & Aari work', hi: 'एम्ब्रॉइडरी और आरी काम', name: { en: 'Embroidery', hi: 'कढ़ाई' }, photo: 'artisan-tailoring.jpg', alt: { en: 'Artisan sewing and decorating handmade clothing', hi: 'हाथ से कपड़ों पर कढ़ाई और सिलाई करते कारीगर' } },
+  { id: 'bamboo', en: 'Bamboo & cane craft', hi: 'बांस और केन क्राफ्ट', name: { en: 'Bamboo & cane craft', hi: 'बांस और केन क्राफ्ट' }, photo: 'artisan-bamboo.jpg', alt: { en: 'Artisan weaving bamboo and cane baskets', hi: 'बांस और केन की टोकरियाँ बनाते कारीगर' } },
+  { id: 'bell-metal', en: 'Bell metal & lacquerware', hi: 'बेल मेटल और लैकरवेयर', name: { en: 'Bell metal', hi: 'बेल मेटल' }, photo: 'artisan-pottery.jpg', alt: { en: 'Traditional artisan shaping a handmade craft', hi: 'पारंपरिक हस्तकला बनाते कारीगर' } },
+  { id: 'tailoring', en: 'Tailoring & stitching', hi: 'टेलरिंग और कढ़ाई/सीवन', name: { en: 'Tailoring', hi: 'टेलरिंग' }, photo: 'artisan-tailoring.jpg', alt: { en: 'Tailor stitching colourful fabric on a sewing machine', hi: 'सिलाई मशीन पर कपड़ा सिलते दर्ज़ी' } },
+  { id: 'dairy', en: 'Dairy value-added products', hi: 'डेयरी वैल्यू एडेड प्रोडक्ट', name: { en: 'Dairy products', hi: 'डेयरी उत्पाद' }, photo: 'artisan-food-processing.jpg', alt: { en: 'Artisans preparing food products together', hi: 'मिलकर खाद्य उत्पाद बनाते कारीगर' } },
+  { id: 'food-processing', en: 'Food processing: pickles, papad & snacks', hi: 'खाद्य प्रसंस्करण: आचार, पापड़ और नाश्ता', name: { en: 'Food processing', hi: 'खाद्य प्रसंस्करण' }, photo: 'artisan-food-processing.jpg', alt: { en: 'Artisans preparing fresh produce for food processing', hi: 'खाद्य प्रसंस्करण के लिए सब्ज़ियाँ तैयार करते कारीगर' } },
+  { id: 'beauty', en: 'Beauty & wellness services', hi: 'सौंदर्य और स्वस्थ्य सेवा', name: { en: 'Beauty & wellness', hi: 'सौंदर्य और वेलनेस' }, photo: 'artisan-beauty.jpg', alt: { en: 'Artisan providing a traditional beauty service', hi: 'पारंपरिक सौंदर्य सेवा देती कारीगर' } }
 ];
 const incomeOptions = [
   { id: 'not-earning', en: 'I am not earning yet', hi: 'अभी कमाई शुरू नहीं हुई है' },
@@ -167,6 +167,43 @@ function prepareLessonPhotos() {
     image.loading = 'lazy';
     image.decoding = 'async';
   });
+  const nextLessonImage = document.querySelector('.lesson-row img');
+  nextLessonImage.src = 'reference-assets/artisan-pottery.jpg';
+  nextLessonImage.alt = artisanCrafts[0].alt[language];
+  nextLessonImage.loading = 'lazy';
+  nextLessonImage.decoding = 'async';
+}
+
+function buildCertificatePreviews() {
+  const quickLinks = document.querySelector('.quick-links');
+  const previews = document.createElement('section');
+  previews.className = 'certificate-previews';
+  previews.setAttribute('aria-labelledby', 'certificate-previews-title');
+  previews.innerHTML = `
+    <div class="certificate-heading">
+      <div>
+        <p class="eyebrow" data-en="SAMPLE TEMPLATES — PREVIEW ONLY" data-hi="नमूना डिज़ाइन — केवल पूर्वावलोकन">SAMPLE TEMPLATES — PREVIEW ONLY</p>
+        <h2 id="certificate-previews-title" data-en="Certificate designs" data-hi="प्रमाणपत्र डिज़ाइन">Certificate designs</h2>
+      </div>
+      <p data-en="These are sample designs, not earned credentials." data-hi="ये नमूना डिज़ाइन हैं, अर्जित प्रमाणपत्र नहीं।">These are sample designs, not earned credentials.</p>
+    </div>
+    <div class="certificate-grid">
+      <article class="certificate-card">
+        <span class="certificate-seal" aria-hidden="true">✦</span>
+        <span class="certificate-label" data-en="CRAFT LEARNING · SAMPLE" data-hi="हस्तकला सीखना · नमूना">CRAFT LEARNING · SAMPLE</span>
+        <h3 data-en="Craft Foundations" data-hi="हस्तकला की बुनियाद">Craft Foundations</h3>
+        <p data-en="A preview of a certificate design for a craft-learning path." data-hi="हस्तकला सीखने के पाठ्यक्रम के प्रमाणपत्र डिज़ाइन का नमूना।">A preview of a certificate design for a craft-learning path.</p>
+        <small data-en="PREVIEW ONLY · NOT EARNED" data-hi="केवल नमूना · अर्जित नहीं">PREVIEW ONLY · NOT EARNED</small>
+      </article>
+      <article class="certificate-card certificate-card-business">
+        <span class="certificate-seal" aria-hidden="true">₹</span>
+        <span class="certificate-label" data-en="BUSINESS LEARNING · SAMPLE" data-hi="व्यापार सीखना · नमूना">BUSINESS LEARNING · SAMPLE</span>
+        <h3 data-en="Digital Selling Basics" data-hi="डिजिटल बिक्री की बुनियाद">Digital Selling Basics</h3>
+        <p data-en="A preview of a certificate design for selling skills." data-hi="बिक्री कौशल के प्रमाणपत्र डिज़ाइन का नमूना।">A preview of a certificate design for selling skills.</p>
+        <small data-en="PREVIEW ONLY · NOT EARNED" data-hi="केवल नमूना · अर्जित नहीं">PREVIEW ONLY · NOT EARNED</small>
+      </article>
+    </div>`;
+  quickLinks.before(previews);
 }
 
 function prepareProductPhotos() {
@@ -446,6 +483,7 @@ document.addEventListener('gramvyapar:language', (event) => {
     const craft = artisanCrafts.find((item) => item.id === card.dataset.craft);
     if (craft) card.querySelector('img').alt = craft.alt[language];
   });
+  document.querySelector('.lesson-row img').alt = artisanCrafts[0].alt[language];
   document.querySelectorAll('.product-card').forEach((card) => {
     const image = card.querySelector('.product-art img');
     const product = shopProductPhotos[card.dataset.product];
@@ -536,53 +574,12 @@ document.querySelector('#drawer-close').addEventListener('click', () => {
 document.querySelector('#shop-overlay').addEventListener('click', (event) => {
   if (event.target.id === 'shop-overlay') event.currentTarget.hidden = true;
 });
-document.querySelector('#price-float-toggle').addEventListener('click', (event) => {
-  const panel = document.querySelector('#price-float-panel');
-  panel.hidden = !panel.hidden;
-  event.currentTarget.setAttribute('aria-expanded', String(!panel.hidden));
-});
-const pricePanel = document.querySelector('#price-float-panel');
-const priceExpandToggle = document.createElement('button');
-priceExpandToggle.className = 'price-expand-toggle';
-priceExpandToggle.type = 'button';
-priceExpandToggle.setAttribute('aria-label', 'Expand pricing calculator');
-priceExpandToggle.title = 'Expand to full screen';
-priceExpandToggle.textContent = '⛶';
-pricePanel.querySelector('.panel-close').before(priceExpandToggle);
-function updatePriceExpandToggle() {
-  const fullscreen = pricePanel.classList.contains('fullscreen');
-  priceExpandToggle.textContent = fullscreen ? '⤡' : '⛶';
-  priceExpandToggle.setAttribute('aria-label', fullscreen
-    ? (language === 'hi' ? 'छोटे पैनल में दिखाएँ' : 'Show as compact panel')
-    : (language === 'hi' ? 'पूरी स्क्रीन में खोलें' : 'Expand to full screen'));
-  priceExpandToggle.title = priceExpandToggle.getAttribute('aria-label');
-}
-priceExpandToggle.addEventListener('click', () => {
-  pricePanel.classList.toggle('fullscreen');
-  updatePriceExpandToggle();
-});
-updatePriceExpandToggle();
-document.querySelector('.price-float-panel .panel-close').addEventListener('click', () => {
-  pricePanel.hidden = true;
-  document.querySelector('#price-float-toggle').setAttribute('aria-expanded', 'false');
-});
-function updateQuickPrice() {
-  const amount = ['materials', 'hours', 'hourly', 'packaging']
-    .map((field) => Number(document.querySelector(`#quick-${field}`).value) || 0);
-  document.querySelector('#quick-price-result').textContent = `₹${Math.ceil(amount[0] + amount[1] * amount[2] + amount[3]).toLocaleString('en-IN')}`;
-}
-document.querySelectorAll('#price-float-panel input').forEach((input) => input.addEventListener('input', updateQuickPrice));
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     document.querySelector('#shop-overlay').hidden = true;
-    pricePanel.hidden = true;
-    pricePanel.classList.remove('fullscreen');
-    updatePriceExpandToggle();
-    document.querySelector('#price-float-toggle').setAttribute('aria-expanded', 'false');
   }
 });
 document.addEventListener('gramvyapar:language', () => {
-  updatePriceExpandToggle();
   if (!document.querySelector('#shop-overlay').hidden) {
     const mode = document.querySelector('#drawer-title').textContent.includes('wishlist') || document.querySelector('#drawer-title').textContent.includes('विशलिस्ट')
       ? 'wishlist' : 'cart';
@@ -590,6 +587,7 @@ document.addEventListener('gramvyapar:language', () => {
   }
 });
 buildArtisanProfileUi();
+buildCertificatePreviews();
 prepareLessonPhotos();
 prepareProductPhotos();
 loadUser().catch((error) => {

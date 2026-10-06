@@ -23,7 +23,7 @@
     }
   });
   const pwaScript = document.createElement('script');
-  pwaScript.src = new URL('pwa.js?v=gramvyapar-app-2', document.baseURI).href;
+  pwaScript.src = new URL('pwa.js?v=gramvyapar-app-3', document.baseURI).href;
   document.head.append(pwaScript);
   const jsonResponse = (payload, status = 200) => new Response(JSON.stringify(payload), {
     status,

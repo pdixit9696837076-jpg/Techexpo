@@ -1,7 +1,7 @@
 # Image credits
 
-The seven craft lesson photographs in `reference-assets/artisan-*.png` were
-provided by the project owner for use in GramVyapar.
+The seven craft lesson photographs in `reference-assets/artisan-*.jpg` are
+cropped from images provided by the project owner for use in GramVyapar.
 
 Marketplace photos are local resized thumbnails from Wikimedia Commons. They
 illustrate the sample listings and are not a guarantee that the pictured item

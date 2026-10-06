@@ -33,7 +33,7 @@
   updateButton();
 
   const style = document.createElement('style');
-  style.textContent = '.gramvyapar-install{position:fixed;z-index:9000;right:18px;bottom:18px;border:0;border-radius:999px;padding:12px 18px;background:#11112f;color:#fff;font:600 14px/1.2 system-ui,sans-serif;box-shadow:0 8px 24px #11112f33;cursor:pointer}.gramvyapar-install:hover{background:#26264d}.gramvyapar-install:focus-visible{outline:3px solid #edb42b;outline-offset:3px}@media(max-width:600px){.gramvyapar-install{right:12px;bottom:12px;font-size:13px}}';
+  style.textContent = '.gramvyapar-install{position:fixed;z-index:9000;right:18px;bottom:18px;border:0;border-radius:999px;padding:12px 18px;background:#11112f;color:#fff;font:600 14px/1.2 system-ui,sans-serif;box-shadow:0 8px 24px #11112f33;cursor:pointer}.gramvyapar-install:hover{background:#26264d}.gramvyapar-install:focus-visible{outline:3px solid #edb42b;outline-offset:3px}@media(max-width:760px){.gramvyapar-install{right:12px;bottom:12px;font-size:13px}.dashboard-page .gramvyapar-install{bottom:calc(76px + env(safe-area-inset-bottom))}}';
   document.head.append(style);
 
   window.addEventListener('beforeinstallprompt', (event) => {
