@@ -32,6 +32,9 @@
       link.href = target.href;
     }
   });
+  const pwaScript = document.createElement('script');
+  pwaScript.src = new URL('pwa.js?v=gramvyapar-app-2', document.baseURI).href;
+  document.head.append(pwaScript);
   const style = document.createElement('style');
   style.textContent = '.demo-banner{position:sticky;top:0;z-index:10000;padding:9px 16px;background:#fff2cc;color:#563b00;text-align:center;font:600 13px/1.4 system-ui,sans-serif;border-bottom:1px solid #e8c968}';
   document.head.append(style);

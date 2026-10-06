@@ -8,6 +8,10 @@ The GitHub Pages site includes a browser-only presentation demo. Visitors can cr
 
 To test the Pages demo locally while running the Node server, open `http://localhost:3000/login.html?pages-demo=1`. The demo switch lasts for that browser tab; ordinary local use without the query parameter continues to use the real API.
 
+## Install on Android
+
+Open the live GitHub Pages site in Chrome on Android, then tap **Add to home screen** (or **Install app**) in the browser menu. The site can open as a standalone app and its main screens are cached for offline viewing after the first visit. Account/API demo features still work only in that browser and are not a real backend.
+
 ## Create the live site
 
 1. Push this project to your GitHub repository.
